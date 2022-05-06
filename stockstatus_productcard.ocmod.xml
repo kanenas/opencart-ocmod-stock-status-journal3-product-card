@@ -1,0 +1,25 @@
+<modification>
+    <name>Add stock status to product card</name>
+    <version>2.0</version>
+    <link>https://kanenas.net/</link>
+    <author>kanenas.net (aka Nikolas Branis) - nbran@kanenas.net</author>
+    <code>stockstatus_productcard</code>
+    <file path="catalog/controller/product/{catalog,category,compare,manufacturer,search,special}*.php">
+        <operation>
+            <search><![CDATA[public function index() {]]></search>
+            <add position="after"><![CDATA[
+        $this->load->language('product/product');
+            ]]></add>
+        </operation>
+    </file>
+    <file path="catalog/view/theme/journal3/template/journal3/product_card.twig">
+        <operation>
+            <search><![CDATA[{% if product.price %}]]></search>
+            <add position="before"><![CDATA[
+        <div class="stock">
+            <p><span class="knns-lang">{{- text_stock -}}</span> <strong>{{- product.stock_status -}}</strong></p>
+        </div>
+            ]]></add>
+        </operation>
+    </file>
+</modification>
