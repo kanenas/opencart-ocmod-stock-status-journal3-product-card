@@ -1,2 +1,3 @@
-# opencart-ocmod-stock-status-journal3-product-card
-Add stock status to Journal's product card
+# [OCMOD] Add stock status to Journal's product card
+
+**Opencart**: v3.0.3.8 
